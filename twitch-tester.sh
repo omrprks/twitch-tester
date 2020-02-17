@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-set -e
+set -eo pipefail
+
+set -a
+[[ -f .env ]] && . .env
+set +a
 
 fatal() {
   COLOUR_RED="\033[0;31m"
